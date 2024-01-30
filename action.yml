@@ -1,0 +1,27 @@
+name: 'Restart ECS service'
+description: 'Action to restart ecs service'
+inputs:
+  PROFILE_NAME:  # id of input
+    description: 'Name of the profile to be used to connect to the AWS'
+    required: false
+    default: 'default'
+  REGION_NAME: # id of input
+    description: 'Name of the region to be used to connect to the AWS'
+    required: false
+    default: 'us-east-1'
+  CLUSTER_NAME: # id of input
+    description: 'Name of the cluster in ECS'
+    required: false
+    default: 'default'
+  SERVICE_NAME: # id of input
+    description: 'Name of the service in ECS cluster'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.PROFILE_NAME }}
+    - ${{ inputs.REGION_NAME }}
+    - ${{ inputs.CLUSTER_NAME }}
+    - ${{ inputs.SERVICE_NAME }}
