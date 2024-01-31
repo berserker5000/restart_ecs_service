@@ -1,21 +1,21 @@
 name: 'Restart ECS service'
 description: 'Action to restart ecs service'
 inputs:
-  ACCESS_KEY_ID:  
+  ACCESS_KEY_ID:
     description: 'AWS access_key_id'
     required: true
   SECRET_ACCESS_KEY:
     required: true
     description: 'AWS secret_access_key'
-  REGION_NAME: 
+  REGION_NAME:
     description: 'Name of the region to be used to connect to the AWS'
     required: false
     default: 'us-east-1'
-  CLUSTER_NAME: 
+  CLUSTER_NAME:
     description: 'Name of the cluster in ECS'
     required: false
     default: 'default'
-  SERVICE_NAME: 
+  SERVICE_NAME:
     description: 'Name of the service in ECS cluster'
     required: true
 
