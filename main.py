@@ -2,13 +2,14 @@ import os
 
 from boto3 import Session
 
-profile_name = os.getenv("PROFILE_NAME") or "default"
+access_key_id = os.getenv("ACCESS_KEY_ID")
+secret_access_key = os.getenv("SECRET_ACCESS_KEY")
 region_name = os.getenv("REGION_NAME") or "us-east-1"
 ecs_cluster_name = os.getenv("CLUSTER_NAME") or "default"
 
 ecs_service_name = os.getenv("SERVICE_NAME")
 
-session = Session(profile_name=profile_name, region_name=region_name)
+session = Session(aws_access_key_id=access_key_id, region_name=region_name, aws_secret_access_key=secret_access_key)
 ecs_client = session.client("ecs")
 
 

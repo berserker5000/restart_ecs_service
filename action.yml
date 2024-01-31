@@ -1,10 +1,12 @@
 name: 'Restart ECS service'
 description: 'Action to restart ecs service'
 inputs:
-  PROFILE_NAME:  # id of input
-    description: 'Name of the profile to be used to connect to the AWS'
-    required: false
-    default: 'default'
+  ACCESS_KEY_ID:  # id of input
+    description: 'AWS access_key_id'
+    required: true
+  SECRET_ACCESS_KEY:
+    required: true
+    description: 'AWS secret_access_key'
   REGION_NAME: # id of input
     description: 'Name of the region to be used to connect to the AWS'
     required: false
