@@ -37,7 +37,7 @@ def set_task_count(ecs_client, ecs_cluster_name, ecs_service_name, count):
 	)
 
 
-def main():
+def main(ecs_client, ecs_cluster_name, ecs_service_name):
 	running_count = get_running_count(ecs_client, ecs_cluster_name, ecs_service_name)
 	count = 0
 	print(f"Changing service {ecs_service_name} to the desired count of {count}")
@@ -48,4 +48,4 @@ def main():
 	               count=running_count)
 
 
-main()
+main(ecs_cluster_name=ecs_cluster_name, ecs_client=ecs_client, ecs_service_name=ecs_service_name)

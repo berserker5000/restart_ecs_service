@@ -23,7 +23,8 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.PROFILE_NAME }}
     - ${{ inputs.REGION_NAME }}
     - ${{ inputs.CLUSTER_NAME }}
     - ${{ inputs.SERVICE_NAME }}
+    - ${{inputs.ACCESS_KEY_ID}}
+    - ${{inputs.SECRET_ACCESS_KEY}}
