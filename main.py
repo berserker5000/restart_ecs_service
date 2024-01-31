@@ -3,7 +3,7 @@ import os
 from boto3 import Session
 
 access_key_id = os.getenv("INPUT_ACCESS_KEY_ID")
-secret_access_key = os.getenv("SINPUT_ECRET_ACCESS_KEY")
+secret_access_key = os.getenv("INPUT_SECRET_ACCESS_KEY")
 region_name = os.getenv("INPUT_REGION_NAME") or "us-east-1"
 ecs_cluster_name = os.getenv("INPUT_CLUSTER_NAME") or "default"
 
