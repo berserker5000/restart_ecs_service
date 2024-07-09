@@ -24,7 +24,8 @@ def get_running_count(ecs_client, ecs_cluster_name, ecs_service_name):
 def set_task_count(ecs_client, ecs_cluster_name, ecs_service_name, count):
 	ecs_client.update_service(cluster=ecs_cluster_name,
 	                          service=ecs_service_name,
-	                          desiredCount=count)
+	                          desiredCount=count,
+	                          forceNewDeployment=True)
 	waiter = ecs_client.get_waiter('services_stable')
 	waiter.wait(
 		cluster=ecs_cluster_name,
